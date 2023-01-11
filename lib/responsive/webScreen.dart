@@ -11,37 +11,55 @@ class WebScreen extends StatelessWidget {
         centerTitle: true,
       ),
       backgroundColor: Colors.black,
-      body: Column(
-        children:  [
-          //! You Tube Video
-          Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: AspectRatio(
-              aspectRatio: 16 / 9,
-              child: Container(
-                color: Colors.purple,
-                height: 250,
-
-                
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Row(
+          children: [
+            //First Column
+            Expanded(
+              child: Column(
+                children:  [
+                  //! You Tube Video
+                  Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: AspectRatio(
+                      aspectRatio: 16 / 9,
+                      child: Container(
+                        color: Colors.purple,
+                        height: 250,
+            
+                        
+                      ),
+                    ),
+                  ),
+                  //! Comment Section And Recomended Video
+                  Expanded(
+                    child: ListView.builder(
+                      itemCount: 10,
+                      itemBuilder: (BuildContext context, int index) {
+                        return Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: Container(
+                            color: Colors.deepPurple[400],
+                            height: 120,
+                          ),
+                        );
+                      },
+                    ),
+                  )
+                ],
               ),
             ),
-          ),
-          //! Comment Section And Recomended Video
-          Expanded(
-            child: ListView.builder(
-              itemCount: 10,
-              itemBuilder: (BuildContext context, int index) {
-                return Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Container(
-                    color: Colors.deepPurple[400],
-                    height: 120,
-                  ),
-                );
-              },
-            ),
-          )
-        ],
+            //Second Colum
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Container(
+                width: 200,
+                color: Colors.deepOrange,
+              ),
+            )
+          ],
+        ),
       ),
     );
   } 
